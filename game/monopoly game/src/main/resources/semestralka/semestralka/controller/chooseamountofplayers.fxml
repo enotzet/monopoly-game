@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="semestralka.semestralka.controller.Chooseamountofplayers">
+   <children>
+      <Text layoutX="80.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose amount of players">
+         <font>
+            <Font size="40.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnOne" layoutX="29.0" layoutY="130.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="102.0" text="1">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnTwo" layoutX="174.0" layoutY="130.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="102.0" text="2">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnThree" layoutX="317.0" layoutY="130.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="102.0" text="3">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn4" layoutX="462.0" layoutY="130.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="102.0" text="4">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

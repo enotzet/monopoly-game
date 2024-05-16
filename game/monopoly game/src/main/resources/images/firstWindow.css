@@ -1,0 +1,5 @@
+.anchor {
+    -fx-background-image:url('./fir.jpg');
+    -fx-background-repeat: stretch;
+     -fx-background-size: 100% 700px;
+}
