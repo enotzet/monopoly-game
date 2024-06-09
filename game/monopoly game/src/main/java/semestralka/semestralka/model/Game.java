@@ -113,14 +113,14 @@ public class Game{
                 p = new Player("Bob",1, true);
             players.add(p);
             if (Objects.equals(names.get(0), "John"))
-                p = new Player("Edward",1, true);
+                p = new Player("Edward",2, true);
             else
-                p = new Player("John",1, true);
+                p = new Player("John",2, true);
             players.add(p);
             if (Objects.equals(names.get(0), "Steve"))
-                p = new Player("Edward",1, true);
+                p = new Player("Edward",3,true);
             else
-                p = new Player("Steve",1, true);
+                p = new Player("Steve",3, true);
             players.add(p);
             count_of_active_players = 4;
         }

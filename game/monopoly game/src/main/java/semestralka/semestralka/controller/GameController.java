@@ -543,6 +543,7 @@ public class GameController {
             g1 =  new Game(number_of_players,names);
         }
         Game game = g1;
+        System.out.println(game.players.size());
         for (int i = 0; i < game.players.size(); i++) {
             Circle circ = new Circle();
             circ.setRadius(16);
@@ -1289,30 +1290,13 @@ public class GameController {
                 }
                 else
                 {
+                    Rectangle rectangle = createRectangle(444,168,481,100,Color.DARKGRAY);
+                    Button button = createButton("Throw dices", "lightgreen", 455, 210,460,24);
+                    button.setTextFill(Color.WHITE);
+                    Text txt1 = createText(currentPlayer.name+"'s turn",450,200,"bold",22);
                     ShowCellInfo=true;
                     ShowUpgradeButton = true;
-                    Rectangle rectangle = new Rectangle();
-                    rectangle.setWidth(481);
-                    rectangle.setHeight(100);
-                    rectangle.setX(444);
-                    rectangle.setY(168);
-                    rectangle.setFill(Color.DARKGRAY);
-
-                    Button button = new Button("Throw dices");
-                    button.setStyle("-fx-background-color: lightgreen;");
-                    button.setCursor(Cursor.HAND);
-                    button.setPrefWidth(460);
-                    button.setLayoutX(455);
-                    button.setLayoutY(210);
                     button.setTextFill(Color.WHITE);
-                    button.setFont(Font.font(24));
-
-                    Text txt1 = new Text();
-                    txt1.setText(currentPlayer.name+"'s turn");
-                    txt1.setFont(Font.font("bold",24));
-                    txt1.setLayoutX(450);
-                    txt1.setLayoutY(200);
-
                     Pane root = new Pane();
                     root.getChildren().addAll(rectangle, button,txt1);
 
@@ -1347,34 +1331,14 @@ public class GameController {
                    if(game.players.get(i).isActive())
                        name=game.players.get(i).name;
                }
-               Rectangle rectangle = new Rectangle();
-               rectangle.setWidth(481);
-               rectangle.setHeight(100);
-               rectangle.setX(444);
-               rectangle.setY(168);
-               rectangle.setFill(Color.DARKGRAY);
-
-               Button button = new Button("Play again");
-               button.setStyle("-fx-background-color: green;");
-               button.setCursor(Cursor.HAND);
-               button.setPrefWidth(220);
-               button.setLayoutX(455);
-               button.setLayoutY(210);
+               Rectangle rectangle = createRectangle(444,168,481,100,Color.DARKGRAY);
+               Button button = createButton("Play again", "green", 455, 210,220,24);
                button.setTextFill(Color.WHITE);
-               button.setFont(Font.font(24));
-               Button button2 = new Button("Exit");
-               button2.setStyle("-fx-background-color: red;");
-               button2.setCursor(Cursor.HAND);
-               button2.setPrefWidth(220);
-               button2.setLayoutX(675);
-               button2.setLayoutY(210);
+               Button button2 = createButton("Exit", "red", 675, 210,220,24);
                button2.setTextFill(Color.WHITE);
-               button2.setFont(Font.font(24));Text txt1 = new Text();
+
+               Text txt1 = createText(name+" has won!",450,200,"bold",26);
                LOGGER.info(name+" has won!");
-               txt1.setText(name+" won!");
-               txt1.setFont(Font.font("bold", 26));
-               txt1.setLayoutX(450);
-               txt1.setLayoutY(200);
                Pane root = new Pane();
                root.getChildren().addAll(rectangle, button, button2, txt1);
 
@@ -1501,33 +1465,13 @@ public class GameController {
             {
                 ShowCellInfo = true;
                 textConsole.appendText(player.name + " is in the Jail.\n");
-                Rectangle rectangle = new Rectangle();
-                rectangle.setWidth(481);
-                rectangle.setHeight(100);
-                rectangle.setX(444);
-                rectangle.setY(168);
-                rectangle.setFill(Color.DARKGRAY);
+                Rectangle rectangle = createRectangle(444,168,481,100,Color.DARKGRAY);
 
-                Button button = new Button("Throw");
-                button.setStyle("-fx-background-color: green;");
-                button.setCursor(Cursor.HAND);
-                button.setPrefWidth(220);
-                button.setLayoutX(455);
-                button.setLayoutY(210);
+                Button button = createButton("Throw", "green", 455, 210,220,24);
                 button.setTextFill(Color.WHITE);
-                button.setFont(Font.font(24));
-                Button button2 = new Button("Pay");
-                button2.setStyle("-fx-background-color: red;");
-                button2.setCursor(Cursor.HAND);
-                button2.setPrefWidth(220);
-                button2.setLayoutX(675);
-                button2.setLayoutY(210);
+                Button button2 = createButton("Pay", "red", 675, 210,220,24);
                 button2.setTextFill(Color.WHITE);
-                button2.setFont(Font.font(24));Text txt1 = new Text();
-                txt1.setText("To get out you need to throw a double(you can try to do it 3 times) or pay 100$");
-                txt1.setFont(Font.font("bold", 12));
-                txt1.setLayoutX(450);
-                txt1.setLayoutY(200);
+                Text txt1 = createText("To get out you need to throw a double(you can try to do it 3 times) or pay 100$",450,200,"bold",12);
                 Pane root = new Pane();
                 root.getChildren().addAll(rectangle, button, button2, txt1);
 
@@ -1543,27 +1487,10 @@ public class GameController {
                     if (player.inJail >= 4)
                     {
                         textConsole.appendText("You don't have any tries, now you need to pay 100$\n");
-                        Rectangle rectangle1 = new Rectangle();
-                        rectangle1.setWidth(481);
-                        rectangle1.setHeight(100);
-                        rectangle1.setX(444);
-                        rectangle1.setY(168);
-                        rectangle1.setFill(Color.DARKGRAY);
-
-                        Button button1 = new Button("Pay");
-                        button1.setStyle("-fx-background-color: lightgreen;");
-                        button1.setCursor(Cursor.HAND);
-                        button1.setPrefWidth(460);
-                        button1.setLayoutX(455);
-                        button1.setLayoutY(210);
+                        Rectangle rectangle1 = createRectangle(444,168,481,100,Color.DARKGRAY);
+                        Button button1 = createButton("Pay", "lightgreen",455,210,460,24);
                         button1.setTextFill(Color.WHITE);
-                        button1.setFont(Font.font(24));
-
-                        Text txt = new Text();
-                        txt.setText("Pay 100$?");
-                        txt.setFont(Font.font("bold",24));
-                        txt.setLayoutX(450);
-                        txt.setLayoutY(200);
+                        Text txt = createText("Pay 100$?",450, 200,"bold",24 );
                         Pane root1 = new Pane();
                         root.getChildren().addAll(rectangle1, button1,txt);
 
@@ -1881,27 +1808,10 @@ public class GameController {
                     PropertyCell property_cell = (PropertyCell)game.game_board.game_board[player.current_position];
                     if (property_cell.owner != player) {
                         if (property_cell.owner != null) {
-                            Rectangle rectangle = new Rectangle();
-                            rectangle.setWidth(481);
-                            rectangle.setHeight(100);
-                            rectangle.setX(444);
-                            rectangle.setY(168);
-                            rectangle.setFill(Color.DARKGRAY);
-
-                            Button button = new Button("Throw dices");
-                            button.setStyle("-fx-background-color: lightgreen;");
-                            button.setCursor(Cursor.HAND);
-                            button.setPrefWidth(460);
-                            button.setLayoutX(455);
-                            button.setLayoutY(210);
+                            Rectangle rectangle = createRectangle(444,168,481,100,Color.DARKGRAY);
+                            Button button = createButton("Throw dices", "lightgreen",455,210,460,24);
                             button.setTextFill(Color.WHITE);
-                            button.setFont(Font.font(24));
-
-                            Text txt1 = new Text();
-                            txt1.setText("Throw dices to find out how much to pay");
-                            txt1.setFont(Font.font("bold",18));
-                            txt1.setLayoutX(450);
-                            txt1.setLayoutY(200);
+                            Text txt1 = createText("Throw dices to find out how much to pay",450,200,"bold",18 );
                             if (player.isBot)
                             {
                                 textConsole.appendText(player.name+" throws dices\n");
@@ -1949,27 +1859,9 @@ public class GameController {
                     PropertyCell property_cell = (PropertyCell)game.game_board.game_board[player.current_position];
                     if (property_cell.owner != player) {
                         if (property_cell.owner != null) {
-                            Rectangle rectangle = new Rectangle();
-                            rectangle.setWidth(481);
-                            rectangle.setHeight(100);
-                            rectangle.setX(444);
-                            rectangle.setY(168);
-                            rectangle.setFill(Color.DARKGRAY);
-
-                            Button button = new Button("Throw dices");
-                            button.setStyle("-fx-background-color: lightgreen;");
-                            button.setCursor(Cursor.HAND);
-                            button.setPrefWidth(460);
-                            button.setLayoutX(455);
-                            button.setLayoutY(210);
-                            button.setTextFill(Color.WHITE);
-                            button.setFont(Font.font(24));
-
-                            Text txt1 = new Text();
-                            txt1.setText("Throw dices to find out how much to pay");
-                            txt1.setFont(Font.font("bold",18));
-                            txt1.setLayoutX(450);
-                            txt1.setLayoutY(200);
+                            Rectangle rectangle = createRectangle(444,168,481,100,Color.DARKGRAY);
+                            Button button = createButton("Throw dices", "lightgreen", 455, 210,460,24);
+                            Text txt1 = createText("Throw dices to find out how much to pay", 450, 200, "bold",18);
                             if (player.isBot)
                             {
                                 textConsole.appendText(player.name+" throws dices\n");
@@ -2103,27 +1995,11 @@ public class GameController {
                 }
                 else
                 {
-                    Rectangle rectangle = new Rectangle();
-                    rectangle.setWidth(481);
-                    rectangle.setHeight(100);
-                    rectangle.setX(444);
-                    rectangle.setY(168);
-                    rectangle.setFill(Color.DARKGRAY);
-
-                    Button button = new Button("PAY");
-                    button.setStyle("-fx-background-color: green;");
-                    button.setCursor(Cursor.HAND);
-                    button.setPrefWidth(460);
-                    button.setLayoutX(455);
-                    button.setLayoutY(210);
+                    Rectangle rectangle = createRectangle(444,168,481,100,Color.DARKGRAY);
+                    Button button = createButton("PAY", "green", 455, 210,460,24);
+                    Text txt1 = createText("Pay 150$ to "+owner.name+"?", 450, 200, "bold",22);
                     button.setTextFill(Color.WHITE);
-                    button.setFont(Font.font(24));
-
-                    Text txt1 = new Text();
-                    txt1.setText("Pay 150$ to "+owner.name+"?");
-                    txt1.setFont(Font.font("bold",22));
-                    txt1.setLayoutX(450);
-                    txt1.setLayoutY(200);Pane root = new Pane();
+                    Pane root = new Pane();
                     Pane root1 = new Pane();
                     root1.getChildren().addAll(rectangle, button,txt1);
 
@@ -2306,36 +2182,14 @@ public class GameController {
         }
         else
         {
-            Rectangle rectangle = new Rectangle();
-            rectangle.setWidth(481);
-            rectangle.setHeight(100);
-            rectangle.setX(444);
-            rectangle.setY(168);
-            rectangle.setFill(Color.DARKGRAY);Button button = new Button("Yes");
-            button.setStyle("-fx-background-color: green;");
-            button.setCursor(Cursor.HAND);
-            button.setPrefWidth(220);
-            button.setLayoutX(455);
-            button.setLayoutY(210);
+            Button button = createButton("Yes", "green", 455, 210,220,24);
+            Button button2 = createButton("No", "red", 675, 210,220,24);
+            Rectangle rectangle = createRectangle(444,168,481,100,Color.DARKGRAY);
             button.setTextFill(Color.WHITE);
-            button.setFont(Font.font(24));
-            Button button2 = new Button("No");
-            button2.setStyle("-fx-background-color: red;");
-            button2.setCursor(Cursor.HAND);
-            button2.setPrefWidth(220);
-            button2.setLayoutX(675);
-            button2.setLayoutY(210);
             button2.setTextFill(Color.WHITE);
-            button2.setFont(Font.font(24));
-            Text txt1 = new Text();
-            txt1.setText("Do you want ot buy " + property_cell.name_of_cell + "?");
-            txt1.setFont(Font.font("bold", 22));
-            txt1.setLayoutX(450);
-            txt1.setLayoutY(200);
-            //
+            Text txt1 = createText("Do you want ot buy " + property_cell.name_of_cell + "?",450,200,"bold",22);
             Pane root = new Pane();
             root.getChildren().addAll(rectangle, button, button2, txt1);
-
             Scene scene = btnStart.getScene();
             Pane rootPane = (Pane) scene.getRoot();
             rootPane.getChildren().add(root);
@@ -2389,27 +2243,11 @@ public class GameController {
         else
         {
             ShowCellInfo=true;
-            Rectangle rectangle = new Rectangle();
-            rectangle.setWidth(481);
-            rectangle.setHeight(100);
-            rectangle.setX(444);
-            rectangle.setY(168);
-            rectangle.setFill(Color.DARKGRAY);
-
-            Button button = new Button("PAY");
-            button.setStyle("-fx-background-color: green;");
-            button.setCursor(Cursor.HAND);
-            button.setPrefWidth(460);
-            button.setLayoutX(455);
-            button.setLayoutY(210);
+            Rectangle rectangle = createRectangle(444,168,481,100,Color.DARKGRAY);
+            Button button = createButton("PAY", "green", 455, 210,460,24);
             button.setTextFill(Color.WHITE);
-            button.setFont(Font.font(24));
-
-            Text txt1 = new Text();
-            txt1.setText("Pay "+money+"$ to "+property_cell.owner.name+"?");
-            txt1.setFont(Font.font("bold",22));
-            txt1.setLayoutX(450);
-            txt1.setLayoutY(200);Pane root = new Pane();
+            Text txt1 = createText("Pay "+money+"$ to "+property_cell.owner.name+"?",450,200,"bold",22);
+            Pane root = new Pane();
             Pane root1 = new Pane();
             root1.getChildren().addAll(rectangle, button,txt1);
 
@@ -2480,31 +2318,14 @@ public class GameController {
         else
         {
             ShowCellInfo=true;
-            Rectangle rectangle = new Rectangle();
-            rectangle.setWidth(481);
-            rectangle.setHeight(100);
-            rectangle.setX(444);
-            rectangle.setY(168);
-            rectangle.setFill(Color.DARKGRAY);
-
-            Button button = new Button("PAY");
-            button.setStyle("-fx-background-color: green;");
-            button.setCursor(Cursor.HAND);
-            button.setPrefWidth(460);
-            button.setLayoutX(455);
-            button.setLayoutY(210);
+            Rectangle rectangle = createRectangle(444,168,481,100,Color.DARKGRAY);
+            Button button = createButton("PAY", "green", 455, 210,460,24);
+            button.setTextFill(Color.WHITE);
+            Text txt1 = createText(text,450,200,"bold",22);
             button.setTextFill(Color.WHITE);
             button.setFont(Font.font(24));
-
-            Text txt1 = new Text();
-            txt1.setText(text);
-            txt1.setFont(Font.font("bold", 22));
-            txt1.setLayoutX(450);
-            txt1.setLayoutY(200);
-            //
             Pane root = new Pane();
             root.getChildren().addAll(rectangle, button,txt1);
-
             Pane rootPane = (Pane) btnStart.getScene().getRoot();
             rootPane.getChildren().addAll(rectangle, button, txt1);
             CellInfoRectangle.toFront();
@@ -2993,5 +2814,33 @@ public class GameController {
                 }
             }
         }
+    }
+    private Rectangle createRectangle(double x, double y, double width, double height, Color color) {
+        Rectangle rectangle = new Rectangle();
+        rectangle.setX(x);
+        rectangle.setY(y);
+        rectangle.setWidth(width);
+        rectangle.setHeight(height);
+        rectangle.setFill(color);
+        return rectangle;
+    }
+    private Button createButton(String text, String color, double layoutX, double layoutY, double width, double fontSize) {
+        Button button = new Button(text);
+        button.setStyle("-fx-background-color: " + color + ";");
+        button.setCursor(Cursor.HAND);
+        button.setPrefWidth(width);
+        button.setLayoutX(layoutX);
+        button.setLayoutY(layoutY);
+        button.setTextFill(Color.WHITE);
+        button.setFont(Font.font(fontSize));
+        return button;
+    }
+    private Text createText(String content, double layoutX, double layoutY, String fontWeight, double fontSize) {
+        Text text = new Text();
+        text.setText(content);
+        text.setFont(Font.font(fontWeight, fontSize));
+        text.setLayoutX(layoutX);
+        text.setLayoutY(layoutY);
+        return text;
     }
 }
